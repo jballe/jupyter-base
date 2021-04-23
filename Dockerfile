@@ -116,7 +116,9 @@ RUN wget --quiet "https://github.com/conda-forge/miniforge/releases/download/${m
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
-RUN conda install --quiet --yes  \
+# Install Jupyter and packages
+RUN \
+    conda install --quiet --yes  \
         notebook \
         nbconvert \
     && \
