@@ -45,18 +45,19 @@ RUN apt-get -q update \
     # run-one \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-    locale-gen
+# RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+#     locale-gen
 
 # Configure environment
 ENV CONDA_DIR=/opt/conda \
     SHELL=/bin/bash \
     NB_USER=$NB_USER \
     NB_UID=$NB_UID \
-    NB_GID=$NB_GID \
-    LC_ALL=en_US.UTF-8 \
-    LANG=en_US.UTF-8 \
-    LANGUAGE=en_US.UTF-8
+    NB_GID=$NB_GID
+    # Those are defined already in latex-base image
+    # LC_ALL=en_US.UTF-8 \
+    # LANG=en_US.UTF-8 \
+    # LANGUAGE=en_US.UTF-8
 ENV PATH=$CONDA_DIR/bin:$PATH \
     HOME=/home/$NB_USER \
     CONDA_VERSION="${conda_version}" \
