@@ -126,6 +126,9 @@ RUN \
     conda clean --all -f -y && \
     npm cache clean --force && \
     jupyter notebook --generate-config && \
+    jupyter nbextension install --py \
+        hide_code \
+    && \
     # jupyter lab clean && \
     rm -rf /home/$NB_USER/.cache/yarn && \
     fix-permissions $CONDA_DIR && \
