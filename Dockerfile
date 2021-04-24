@@ -122,6 +122,7 @@ RUN \
     conda install --quiet --yes  \
         notebook \
         nbconvert \
+        pandoc \
     && \
     conda clean --all -f -y && \
     npm cache clean --force && \
