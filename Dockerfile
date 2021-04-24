@@ -124,16 +124,9 @@ RUN \
         nbconvert \
         pandoc \
     && \
+    jupyter notebook --generate-config && \
     conda clean --all -f -y && \
     npm cache clean --force && \
-    jupyter notebook --generate-config && \
-    jupyter nbextension install \
-        hide_code \
-    --py && \
-    jupyter nbextension enable \
-        hide_code=0.6.0 \
-    --py && \
-    # jupyter lab clean && \
-    rm -rf /home/$NB_USER/.cache/yarn && \
+    rm -rf /home/$NB_USER/.cache && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
