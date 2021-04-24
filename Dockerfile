@@ -1,4 +1,4 @@
-FROM jballe/latex-base:latest
+FROM jballe/latex-base:v1.4
 
 # We reuse node username
 # https://github.com/nodejs/docker-node/blob/31246f5f779cafa0930a1db04bd00d875d6a940d/14/stretch-slim/Dockerfile
